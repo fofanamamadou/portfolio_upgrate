@@ -1,13 +1,12 @@
 [
   {
     "id": 1,
-    "title": "Test",
-    "description": "Test",
-    "imageUrl": null,
+    "title": "Système d'Affiliation",
+    "description": "Un système complet d'affiliation avec des interfaces distinctes pour l'Admin et les Partenaires. Développé avec React et Django, il permet à l'Admin de gérer les utilisateurs et les paiements, tandis que les Partenaires peuvent suivre leurs primes, les prospects générés via leurs liens, et consulter leur évolution de performances.",
+    "imageUrl": "https://i.ibb.co/qYPSc24p/Screenshot-2025-09-01-114309.png",
     "technologies": ["React", "Django", "PostgreSQL", "JWT", "Ant Design", "Recharts"],
-    "githubUrl_front": null,
-    "githubUrl_back":null,
-    "siteUrl": null,
-    "videoUrl": null
-  }
+    "githubUrl_front": "https://github.com/fofanamamadou/affiliation_project_front",
+    "githubUrl_back": "https://github.com/fofanamamadou/affiliation_project_backend",
+    "siteUrl": "https://affiliation.ispatec.net/",
+    "videoHtml": "<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1116365007?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Presentation Plateforme d\\'affiliation\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>"  }
 ]

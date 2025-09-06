@@ -20,22 +20,11 @@ const ProjectModal = ({ project, visible, onClose }) => {
       footer={null} // Supprime le pied de page par défaut de la modale
       width={800} // Largeur de la modale
     >
-      {/* Affiche une vidéo si videoUrl est présent, sinon affiche l'image */}
-      {project.videoUrl ? (
-        // Conteneur pour la vidéo responsive
-        <div className="video-container" style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', maxWidth: '100%', background: '#000' }}>
-          <iframe
-            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-            src={project.videoUrl} // Source de la vidéo (URL YouTube/Vimeo embed)
-            title={`Vidéo de ${project.title}`} // Titre pour l'accessibilité
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen // Permet le mode plein écran
-          ></iframe>
-        </div>
+      {/* Affiche une vidéo si videoHtml est présent, sinon affiche l'image */}
+      {project.videoHtml ? (
+        <div dangerouslySetInnerHTML={{ __html: project.videoHtml }} />
       ) : (
-        // Affiche l'image du projet si pas de vidéo
-        <img alt={project.title} src={project.imageUrl} style={{ width: '100%' }} />
+        <img src={project.imageUrl} alt={project.title} style={{ width: '100%', borderRadius: '8px' }} />
       )}
 
       {/* Description du projet */}

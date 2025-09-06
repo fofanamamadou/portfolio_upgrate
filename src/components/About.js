@@ -19,7 +19,7 @@ const About = () => {
         {/* Colonne pour la photo/avatar */}
         <Col xs={24} sm={8} style={{ textAlign: 'center' }}>
           {/* Composant Avatar d'Ant Design, avec une taille de 150px et une icône par défaut */}
-          <Avatar size={150} src="https://example.com" />
+          <Avatar size={150} src="https://i.ibb.co/W4JdQgPf/Mypicture.jpg" />
         </Col>
 
         {/* Colonne pour le texte de présentation */}
@@ -28,7 +28,7 @@ const About = () => {
           <Title level={2}>À propos de moi</Title>
           {/* Paragraphes de description personnelle */}
           <Paragraph>
-            Bonjour ! Je suis <strong>Nom prenom</strong>, développeur full-stack passionné,
+            Bonjour ! Je suis <strong>Mamadou FOFANA</strong>, développeur full-stack passionné,
             spécialisé dans la création d’applications web et mobiles modernes, performantes et
             intuitives. Mon objectif est de concevoir des solutions qui allient
             <em> efficacité</em>, <em> expérience utilisateur</em> et <em> scalabilité</em>.
