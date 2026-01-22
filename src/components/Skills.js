@@ -15,6 +15,7 @@ const { Title } = Typography;
 const skills = {
   "Frontend": [
     { name: "React.js", icon: <FaReact /> },
+    { name: "Next.js", icon: <SiNextdotjs /> },
     { name: "React Native", icon: <MdOutlinePhoneIphone /> },
     { name: "JavaScript", icon: <IoLogoJavascript /> },
     { name: "HTML5", icon: <FaHtml5 /> },
@@ -27,9 +28,15 @@ const skills = {
     { name: "Django", icon: <SiDjango /> },
     { name: "Spring Boot", icon: <SiSpringboot /> },
     { name: "Node.js", icon: <FaNodeJs /> },
-    { name: "PostgreSQL", icon: <SiPostgresql /> },
+    { name: "Hibernate", icon: <SiHibernate /> },
     { name: "API REST", icon: <TbApi /> },
     { name: "JWT Auth", icon: <SiJsonwebtokens /> },
+    { name: "Email Services", icon: <IoMail /> }, 
+    { name: "Multi-tenancy", icon: <MdOutlineAccountTree /> },
+  ],
+  "Database": [
+    { name: "MySQL", icon: <SiMysql /> },
+    { name: "PostgreSQL", icon: <SiPostgresql /> },
   ],
   "Outils": [
     { name: "Git", icon: <FaGitAlt /> },
@@ -38,6 +45,7 @@ const skills = {
     { name: "Postman", icon: <SiPostman /> },
   ],
 };
+
 
 const Skills = () => {
   return (

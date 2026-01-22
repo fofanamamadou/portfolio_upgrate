@@ -228,3 +228,31 @@ h4.ant-typography {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
 }
+
+/* --- Gestion du Thème --- */
+
+/* Thème Sombre (par défaut) */
+:root {
+  --primary-color: #1890ff;
+  --header-background: rgba(0, 0, 0, 0.3);
+  --site-layout-background: rgba(0, 0, 0, 0.5);
+  --card-background-color: rgba(24, 24, 24, 0.5);
+  --footer-background: rgba(0, 0, 0, 0.8);
+  --text-color: #ffffff;
+  --header-text-color: #ffffff;
+  --footer-text-color: #aaaaaa;
+  --border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Thème Clair */
+body.light-theme {
+  --primary-color: #1890ff;
+  --header-background: rgba(255, 255, 255, 0.8);
+  --site-layout-background: #ffffff;
+  --card-background-color: #f5f5f5;
+  --footer-background: #f0f2f5;
+  --text-color: #000000;
+  --header-text-color: #000000;
+  --footer-text-color: #555555;
+  --border-color: rgba(0, 0, 0, 0.1);
+}
