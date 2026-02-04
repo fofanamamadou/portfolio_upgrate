@@ -144,10 +144,9 @@ function App() {
                 type="text"
                 onClick={toggleTheme}
                 icon={isDarkMode ? <SunOutlined /> : <MoonOutlined />}
-                style={{ color: 'var(--header-text-color)' }}
             />
 
-            <Button className="mobile-only" type="text" onClick={showDrawer} style={{color: 'var(--header-text-color)'}}>
+            <Button className="mobile-only" type="text" onClick={showDrawer}>
                 <MenuOutlined />
             </Button>
           </div>

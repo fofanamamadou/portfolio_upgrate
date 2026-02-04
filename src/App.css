@@ -84,6 +84,16 @@
   border-bottom-color: var(--primary-color) !important;
 }
 
+/* Corrige la couleur des icônes dans les boutons de l'en-tête */
+.app-header .ant-btn-text {
+  color: var(--header-text-color);
+}
+
+/* Style au survol pour les boutons de l'en-tête */
+.app-header .ant-btn-text:hover {
+  background-color: rgba(128, 128, 128, 0.15) !important;
+}
+
 /* --- Composants Ant Design Surchargés --- */
 
 .ant-card {
