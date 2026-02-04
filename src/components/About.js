@@ -35,7 +35,7 @@ const About = () => {
           </Paragraph>
           <Paragraph>
             J’ai travaillé avec plusieurs technologies comme <strong>Next.js</strong>, <strong>React.js</strong>,
-            <strong> React Native</strong>, <strong>Django</strong>, <strong>Node.js</strong>,
+            <strong> React Native</strong>, <strong>Django</strong>,
             <strong> Spring Boot (Java)</strong> et <strong>PostgreSQL/MySQL</strong>. Je conçois des
             APIs REST sécurisées (authentification JWT) et j’intègre les frontends web/mobile.
           </Paragraph>

@@ -6,7 +6,7 @@ Bienvenue sur le dépôt de mon portfolio personnel ! Ce site web est conçu pou
 
 *   **Design Moderne et Épuré :** Interface professionnelle avec une typographie soignée (Inter) et une palette de couleurs harmonieuse.
 *   **Effet "Glassmorphism" :** L'en-tête et les cartes utilisent un effet de verre dépoli pour un look moderne et une meilleure hiérarchie visuelle.
-*   **Thème Sombre/Clair Automatique :** L'interface s'adapte aux préférences de votre système d'exploitation.
+*   **Thème Sombre/Clair :** Détection automatique du thème système, avec un sélecteur manuel pour forcer le mode clair ou sombre. Le choix est mémorisé pour les visites futures.
 *   **Micro-interactions :** Des effets de survol subtils sur les cartes de projet et les compétences pour une expérience utilisateur plus dynamique.
 *   **Compétences Visuelles :** Une grille de compétences avec des icônes pour une identification rapide et esthétique des technologies maîtrisées.
 *   **Entièrement Responsive :** Le design s'adapte parfaitement à toutes les tailles d'écran.
@@ -17,10 +17,10 @@ Bienvenue sur le dépôt de mon portfolio personnel ! Ce site web est conçu pou
 *   **Frontend :**
     *   [React](https://react.dev/) : Bibliothèque JavaScript pour la construction d'interfaces utilisateur.
     *   [Ant Design](https://ant.design/) : Bibliothèque de composants UI pour une interface élégante et réactive.
-    *   [react-icons](https://react-icons.github.io/react-icons/) : Pour l'intégration d'icônes de haute qualité.
+    *   [@ant-design/icons](https://ant.design/components/icon/) : Bibliothèque d'icônes SVG de haute qualité, parfaitement intégrée avec Ant Design.
     *   [react-tsparticles](https://www.npmjs.com/package/react-tsparticles) : Pour l'arrière-plan animé et interactif.
 *   **Outils de Développement :**
-    *   [Node.js](https://nodejs.org/) & [npm](https://www.npmjs.com/) : Environnement d'exécution JavaScript et gestionnaire de paquets.
+    *   [Node.js](https://nodejs.org/) & [pnpm](https://pnpm.io/) : Environnement d'exécution JavaScript et gestionnaire de paquets.
     *   [Create React App](https://create-react-app.dev/) (`react-scripts`) : Configuration rapide de l'environnement de développement React.
 
 ## Démarrage Rapide
@@ -29,7 +29,7 @@ Suivez ces étapes pour lancer le projet en local sur votre machine.
 
 ### Prérequis
 
-Assurez-vous d'avoir [Node.js](https://nodejs.org/en/download/) et [npm](https://www.npmjs.com/get-npm) installés sur votre système.
+Assurez-vous d'avoir [Node.js](https://nodejs.org/en/download/) et [pnpm](https://pnpm.io/installation) installés sur votre système.
 
 ### Installation
 
@@ -43,7 +43,7 @@ Assurez-vous d'avoir [Node.js](https://nodejs.org/en/download/) et [npm](https:/
     ```
 3.  Installez les dépendances :
     ```bash
-    npm install
+    pnpm install
     ```
 
 ### Lancement de l'application
@@ -51,7 +51,7 @@ Assurez-vous d'avoir [Node.js](https://nodejs.org/en/download/) et [npm](https:/
 Pour démarrer le serveur de développement :
 
 ```bash
-npm start
+pnpm start
 ```
 
 L'application sera accessible dans votre navigateur à l'adresse `http://localhost:3000`.
@@ -75,7 +75,7 @@ Pour que le formulaire de contact fonctionne, vous devez le lier à votre compte
     REACT_APP_EMAILJS_PUBLIC_KEY=VOTRE_PUBLIC_KEY
     ```
 
-4.  **Redémarrez votre serveur** (`npm start`) après avoir modifié le fichier `.env` pour que les changements soient pris en compte.
+4.  **Redémarrez votre serveur** (`pnpm start`) après avoir modifié le fichier `.env` pour que les changements soient pris en compte.
 
 
 ## Structure du Projet
@@ -98,8 +98,9 @@ Pour que le formulaire de contact fonctionne, vous devez le lier à votre compte
 │   ├── index.js            # Point d'entrée de l'application
 │   └── index.css           # Styles de base et variables de thème
 ├── package.json            # Métadonnées du projet et dépendances
-├── package-lock.json       # Verrouillage des versions des dépendances
-└── README.md               # Ce fichier
+├── pnpm-lock.yaml          # Verrouillage des versions des dépendances
+├── README.md               # Ce fichier
+└── THEME_GUIDE.md          # Documentation sur la gestion du thème
 ```
 
 
