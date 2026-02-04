@@ -41,6 +41,7 @@ const ProjectModal = ({ project, visible, onClose }) => {
 
       {/* Section des boutons d'action (GitHub et Site Live) */}
       <div>
+        
         {/* Bouton "Code Source" si githubUrl est présent */}
         {project.githubUrl_front && (
           <Button 

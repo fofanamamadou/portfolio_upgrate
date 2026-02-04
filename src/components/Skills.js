@@ -3,11 +3,10 @@ import { Typography } from 'antd';
 import {
   FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaNodeJs, FaJava, FaDocker
 } from 'react-icons/fa';
-import { IoLogoJavascript } from 'react-icons/io5';
-import { SiDjango, SiSpringboot, SiPostgresql, SiPostman, SiAntdesign, SiReact, SiJsonwebtokens } from 'react-icons/si';
+import { IoLogoJavascript, IoMail } from 'react-icons/io5';
+import { SiDjango, SiSpringboot, SiPostgresql, SiPostman, SiAntdesign, SiReact, SiJsonwebtokens, SiNextdotjs, SiHibernate, SiMysql } from 'react-icons/si';
 import { TbApi } from "react-icons/tb";
-import { MdDesignServices, MdOutlinePhoneIphone } from "react-icons/md";
-import { RiTailwindCssFill } from "react-icons/ri";
+import { MdDesignServices, MdOutlinePhoneIphone, MdOutlineAccountTree } from "react-icons/md";
 
 const { Title } = Typography;
 
@@ -21,13 +20,11 @@ const skills = {
     { name: "HTML5", icon: <FaHtml5 /> },
     { name: "CSS3", icon: <FaCss3Alt /> },
     { name: "Ant Design", icon: <SiAntdesign /> },
-    { name: "Tailwind CSS", icon: <RiTailwindCssFill /> },
     { name: "Responsive Design", icon: <MdDesignServices /> },
   ],
   "Backend": [
-    { name: "Django", icon: <SiDjango /> },
     { name: "Spring Boot", icon: <SiSpringboot /> },
-    { name: "Node.js", icon: <FaNodeJs /> },
+    { name: "Django", icon: <SiDjango /> },
     { name: "Hibernate", icon: <SiHibernate /> },
     { name: "API REST", icon: <TbApi /> },
     { name: "JWT Auth", icon: <SiJsonwebtokens /> },

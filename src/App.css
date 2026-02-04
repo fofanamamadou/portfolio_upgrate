@@ -217,7 +217,9 @@ h4.ant-typography {
   }
 
   .mobile-only {
-    display: inline-block !important;
+    display: inline-flex !important; /* Utilise flex pour centrer l'icône */
+    align-items: center;
+    justify-content: center;
   }
 
   .site-layout-content {

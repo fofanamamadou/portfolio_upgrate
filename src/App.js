@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Layout, Menu, Typography, Avatar, Drawer, Button } from 'antd';
-import { UserOutlined, MenuOutlined } from '@ant-design/icons';
+import { UserOutlined, MenuOutlined, CodeOutlined, ProjectOutlined, MailOutlined } from '@ant-design/icons';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 
@@ -21,12 +21,12 @@ import './App.css'; // Importe les styles spécifiques à l'application
 const { Header, Content, Footer } = Layout;
 const { Title } = Typography;
 
-// Définit les éléments du menu de navigation
+// Définit les éléments du menu de navigation avec icônes
 const menuItems = [
-    { key: 'about', label: <a href="#about">À propos</a> },
-    { key: 'skills', label: <a href="#skills">Compétences</a> },
-    { key: 'projects', label: <a href="#projects">Projets</a> },
-    { key: 'contact', label: <a href="#contact">Contact</a> },
+    { key: 'about', icon: <UserOutlined />, label: <a href="#about">À propos</a> },
+    { key: 'skills', icon: <CodeOutlined />, label: <a href="#skills">Compétences</a> },
+    { key: 'projects', icon: <ProjectOutlined />, label: <a href="#projects">Projets</a> },
+    { key: 'contact', icon: <MailOutlined />, label: <a href="#contact">Contact</a> },
 ];
 
 // Options de configuration pour l'arrière-plan animé (tsparticles)
@@ -184,13 +184,26 @@ function App() {
 
       {/* Tiroir de navigation (menu mobile) */}
       <Drawer
-          placement="right" // Le tiroir apparaît à droite
-          onClose={onCloseDrawer} // Fonction appelée lors de la fermeture du tiroir
-          open={drawerVisible} // Contrôle la visibilité du tiroir
-          styles={{ // Styles personnalisés pour le tiroir
-            header: { background: 'var(--card-background-color)', borderBottom: '1px solid var(--border-color)' },
-            body: { padding: 0, background: 'var(--card-background-color)' }
-        }}
+          title="Menu"
+          placement="right"
+          onClose={onCloseDrawer}
+          open={drawerVisible}
+          width={280}
+          styles={{
+            header: { 
+              background: 'rgba(25, 25, 25, 0.5)',
+              backdropFilter: 'blur(10px)',
+              borderBottom: '1px solid var(--border-color)' 
+            },
+            body: { 
+              padding: 0, 
+              background: 'rgba(25, 25, 25, 0.5)',
+              backdropFilter: 'blur(10px)'
+            },
+            mask: { 
+              background: 'rgba(0, 0, 0, 0.25)'
+            }
+          }}
       >
           {/* Menu vertical à l'intérieur du tiroir */}
           <Menu

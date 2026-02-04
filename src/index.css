@@ -53,7 +53,6 @@ code {
 
 /* Applique les couleurs de fond et de texte définies par les variables CSS au corps de la page */
 body {
-  background-color: var(--background-color);
   color: var(--text-color);
   /* Ajoute une transition douce pour les changements de thème */
   transition: background-color 0.3s, color 0.3s;
