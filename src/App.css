@@ -44,7 +44,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0; /* Placé au-dessus du fond du body, mais sous le contenu */
 }
 
 /* --- Header & Menu --- */
@@ -212,6 +212,10 @@ h4.ant-typography {
 }
 
 @media (max-width: 768px) {
+  .header-title {
+    font-size: 18px; /* Réduit la taille du nom sur les petits écrans */
+  }
+
   .desktop-only {
     display: none !important;
   }
@@ -257,4 +261,12 @@ body.light-theme {
   --header-text-color: #000000;
   --footer-text-color: #555555;
   --border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* --- Styles pour la modale de projet --- */
+.project-modal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espace entre les boutons, horizontalement et verticalement */
+  margin-top: 24px; /* Espace au-dessus du groupe de boutons */
 }

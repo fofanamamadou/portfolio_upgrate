@@ -21,38 +21,53 @@ code {
     monospace; /* Définit la police pour les blocs de code */
 }
 
-/* Définition des variables CSS pour le thème clair (par défaut) */
+/* Thème clair (par défaut) */
 :root {
-  --background-color: #f5f5f5; /* Fond légèrement grisé */
-  --text-color: #1a1a1a; /* Texte presque noir pour un meilleur confort de lecture */
-  --primary-color: #0052cc; /* Un bleu plus profond et professionnel */
-  --card-background-color: rgba(255, 255, 255, 0.7); /* Fond de carte un peu plus transparent */
-  --border-color: rgba(0, 0, 0, 0.1); /* Bordure plus subtile */
-  --header-background: rgba(255, 255, 255, 0.5); /* Fond de l'en-tête semi-transparent */
-  --header-text-color: #1a1a1a; /* Texte de l'en-tête sombre pour le thème clair */
-  --footer-background: transparent; /* Fond du pied de page transparent */
-  --footer-text-color: #595959; /* Texte du pied de page grisé */
-  --site-layout-background: rgba(255, 255, 255, 0.5); /* Fond du conteneur principal */
+  --background-color: #f5f5f5;
+  --text-color: #1a1a1a;
+  --primary-color: #0052cc;
+  --card-background-color: rgba(255, 255, 255, 0.7);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --header-background: rgba(255, 255, 255, 0.5);
+  --header-text-color: #1a1a1a;
+  --footer-background: transparent;
+  --footer-text-color: #595959;
+  --site-layout-background: rgba(255, 255, 255, 0.5);
 }
 
-/* Définition des variables CSS pour le thème sombre */
+/* Thème sombre (appliqué via la classe .dark-theme) */
+body.dark-theme {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --primary-color: #4dabf7;
+  --card-background-color: rgba(29, 29, 29, 0.7);
+  --border-color: rgba(255, 255, 255, 0.15);
+  --header-background: rgba(20, 20, 20, 0.5);
+  --header-text-color: #e0e0e0;
+  --footer-background: transparent;
+  --footer-text-color: #a3a3a3;
+  --site-layout-background: rgba(20, 20, 20, 0.5);
+}
+
+/* Thème sombre (appliqué via la préférence système) */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #121212; /* Fond sombre profond */
-    --text-color: #e0e0e0; /* Texte blanc cassé */
-    --primary-color: #4dabf7; /* Un bleu plus clair et vibrant pour le thème sombre */
-    --card-background-color: rgba(29, 29, 29, 0.7); /* Fond de carte sombre et semi-transparent */
-    --border-color: rgba(255, 255, 255, 0.15); /* Bordure claire et subtile */
-    --header-background: rgba(20, 20, 20, 0.5); /* Fond de l'en-tête sombre et semi-transparent */
-    --header-text-color: #e0e0e0; /* Texte de l'en-tête clair */
-    --footer-background: transparent; /* Fond du pied de page transparent */
-    --footer-text-color: #a3a3a3; /* Texte du pied de page grisé */
-    --site-layout-background: rgba(20, 20, 20, 0.5); /* Fond du conteneur principal */
+  body:not(.light-theme) {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #4dabf7;
+    --card-background-color: rgba(29, 29, 29, 0.7);
+    --border-color: rgba(255, 255, 255, 0.15);
+    --header-background: rgba(20, 20, 20, 0.5);
+    --header-text-color: #e0e0e0;
+    --footer-background: transparent;
+    --footer-text-color: #a3a3a3;
+    --site-layout-background: rgba(20, 20, 20, 0.5);
   }
 }
 
 /* Applique les couleurs de fond et de texte définies par les variables CSS au corps de la page */
 body {
+  background-color: var(--background-color);
   color: var(--text-color);
   /* Ajoute une transition douce pour les changements de thème */
   transition: background-color 0.3s, color 0.3s;

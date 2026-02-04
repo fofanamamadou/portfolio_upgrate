@@ -41,7 +41,8 @@ Ce document détaille les principales technologies, bibliothèques et concepts u
 
 *   **Objectif :** Fournit une collection d'icônes vectorielles de haute qualité, spécifiquement conçues pour être utilisées avec Ant Design.
 *   **Utilisation dans le projet :**
-    *   Icônes de navigation (`MenuOutlined`).
+    *   Icônes de navigation et de menu (`MenuOutlined`, `CodeOutlined`, `ProjectOutlined`).
+    *   Icônes de changement de thème (`SunOutlined`, `MoonOutlined`).
     *   Icônes de profil (`UserOutlined`).
     *   Icônes de liens sociaux (`LinkedinOutlined`, `GithubOutlined`, `MailOutlined`).
 
@@ -60,8 +61,9 @@ Ce document détaille les principales technologies, bibliothèques et concepts u
 
 *   **Objectif :** Permettent de définir des valeurs réutilisables (comme les couleurs) dans les feuilles de style. Elles sont cruciales pour la mise en œuvre d'un système de thématisation dynamique.
 *   **Utilisation dans le projet :**
-    *   Définition de palettes de couleurs pour les thèmes clair et sombre dans `src/index.css` en utilisant la media query `@media (prefers-color-scheme: dark)`.
-    *   Consommation de ces variables dans `src/App.css` et dans les styles inline des composants pour assurer une cohérence visuelle et une adaptation automatique au thème du navigateur.
+    *   Le fichier `src/index.css` définit des palettes de couleurs pour les thèmes clair (par défaut dans `:root`) et sombre.
+    *   La logique du thème sombre est appliquée si le corps de la page a la classe `.dark-theme` (choix manuel de l'utilisateur) ou via la media query `@media (prefers-color-scheme: dark)` (préférence système), à condition que le thème clair ne soit pas forcé manuellement.
+    *   Toutes les couleurs des composants consomment ces variables pour assurer une cohérence visuelle et une adaptation automatique au thème.
 
 ---
 
