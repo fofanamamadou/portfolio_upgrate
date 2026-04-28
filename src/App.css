@@ -17,14 +17,16 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1200px; /* Limite la largeur pour les grands écrans */
+  max-width: 1200px;
+  /* Limite la largeur pour les grands écrans */
   margin: 0 auto;
 }
 
 .app-content {
   padding: 24px;
   margin-top: 30px;
-  z-index: 1; /* S'assure que le contenu est au-dessus des particules */
+  z-index: 1;
+  /* S'assure que le contenu est au-dessus des particules */
 }
 
 .site-layout-content {
@@ -33,7 +35,8 @@
   background: var(--site-layout-background);
   padding: 48px;
   min-height: 280px;
-  border-radius: 12px; /* Arrondi plus doux */
+  border-radius: 12px;
+  /* Arrondi plus doux */
   backdrop-filter: blur(10px);
   border: 1px solid var(--border-color);
 }
@@ -44,7 +47,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Placé au-dessus du fond du body, mais sous le contenu */
+  z-index: 0;
+  /* Placé au-dessus du fond du body, mais sous le contenu */
 }
 
 /* --- Header & Menu --- */
@@ -52,14 +56,17 @@
 .header-title {
   color: var(--text-color);
   margin: 0;
-  font-weight: 700; /* Police plus affirmée */
-  white-space: nowrap; /* Empêche le retour à la ligne */
+  font-weight: 700;
+  /* Police plus affirmée */
+  white-space: nowrap;
+  /* Empêche le retour à la ligne */
 }
 
 .header-menu.ant-menu {
   background: transparent;
   border-bottom: none;
-  line-height: 62px; /* Ajustement pour l'alignement vertical */
+  line-height: 62px;
+  /* Ajustement pour l'alignement vertical */
 }
 
 .header-menu .ant-menu-item a {
@@ -74,8 +81,10 @@
 }
 
 .header-menu .ant-menu-item::after {
-  border-bottom: 2px solid transparent !important; /* Trait transparent par défaut */
-  transition: border-color 0.3s ease-in-out; /* Transition douce */
+  border-bottom: 2px solid transparent !important;
+  /* Trait transparent par défaut */
+  transition: border-color 0.3s ease-in-out;
+  /* Transition douce */
 }
 
 /* Applique le trait uniquement à l'élément sélectionné ou survolé */
@@ -85,13 +94,25 @@
 }
 
 /* Corrige la couleur des icônes dans les boutons de l'en-tête */
-.app-header .ant-btn-text {
-  color: var(--header-text-color);
+.app-header .ant-btn-text,
+.app-header .anticon {
+  color: var(--header-text-color) !important;
 }
 
 /* Style au survol pour les boutons de l'en-tête */
 .app-header .ant-btn-text:hover {
   background-color: rgba(128, 128, 128, 0.15) !important;
+}
+
+/* Assure que les icônes du menu sont visibles */
+.header-menu .ant-menu-item .anticon {
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+.header-menu .ant-menu-item-selected .anticon,
+.header-menu .ant-menu-item:hover .anticon {
+  color: var(--primary-color) !important;
 }
 
 /* --- Composants Ant Design Surchargés --- */
@@ -101,13 +122,15 @@
   border: 1px solid var(--border-color) !important;
   color: var(--text-color) !important;
   backdrop-filter: blur(10px);
-  border-radius: 12px !important; /* Arrondi cohérent */
+  border-radius: 12px !important;
+  /* Arrondi cohérent */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ant-card:hover {
-  transform: translateY(-5px); /* Effet de lévitation */
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  /* Effet de lévitation */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .ant-card-meta-title {
@@ -126,8 +149,22 @@
   color: var(--text-color) !important;
 }
 
-.ant-modal-close-x {
+.ant-modal-close-x,
+.ant-drawer-close {
   color: var(--text-color) !important;
+}
+
+.ant-drawer-title {
+  color: var(--text-color) !important;
+}
+
+.ant-drawer-content {
+  background-color: var(--background-color) !important;
+}
+
+.ant-drawer-header {
+  background-color: var(--header-background) !important;
+  border-bottom: 1px solid var(--border-color) !important;
 }
 
 .ant-layout-footer {
@@ -145,7 +182,7 @@ h4.ant-typography {
   color: var(--text-color) !important;
 }
 
-.ant-form-item-label > label {
+.ant-form-item-label>label {
   color: var(--text-color) !important;
 }
 
@@ -160,16 +197,16 @@ h4.ant-typography {
 }
 
 .ant-input::placeholder {
-    color: var(--text-color) !important;
-    opacity: 0.5;
+  color: var(--text-color) !important;
+  opacity: 0.5;
 }
 
 .ant-tag {
-    color: var(--text-color);
-    background: var(--card-background-color);
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    padding: 4px 8px;
+  color: var(--text-color);
+  background: var(--card-background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 4px 8px;
 }
 
 /* --- Section Compétences --- */
@@ -195,12 +232,13 @@ h4.ant-typography {
 
 .skill-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   border-color: var(--primary-color);
 }
 
 .skill-icon {
-  font-size: 3rem; /* Taille de l'icône */
+  font-size: 3rem;
+  /* Taille de l'icône */
   color: var(--primary-color);
 }
 
@@ -218,12 +256,14 @@ h4.ant-typography {
 }
 
 .desktop-only {
-  display: flex; /* Utilise flex pour un meilleur alignement */
+  display: flex;
+  /* Utilise flex pour un meilleur alignement */
 }
 
 @media (max-width: 768px) {
   .header-title {
-    font-size: 18px; /* Réduit la taille du nom sur les petits écrans */
+    font-size: 18px;
+    /* Réduit la taille du nom sur les petits écrans */
   }
 
   .desktop-only {
@@ -231,7 +271,8 @@ h4.ant-typography {
   }
 
   .mobile-only {
-    display: inline-flex !important; /* Utilise flex pour centrer l'icône */
+    display: inline-flex !important;
+    /* Utilise flex pour centrer l'icône */
     align-items: center;
     justify-content: center;
   }
@@ -245,38 +286,13 @@ h4.ant-typography {
   }
 }
 
-/* --- Gestion du Thème --- */
-
-/* Thème Sombre (par défaut) */
-:root {
-  --primary-color: #1890ff;
-  --header-background: rgba(0, 0, 0, 0.3);
-  --site-layout-background: rgba(0, 0, 0, 0.5);
-  --card-background-color: rgba(24, 24, 24, 0.5);
-  --footer-background: rgba(0, 0, 0, 0.8);
-  --text-color: #ffffff;
-  --header-text-color: #ffffff;
-  --footer-text-color: #aaaaaa;
-  --border-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Thème Clair */
-body.light-theme {
-  --primary-color: #1890ff;
-  --header-background: rgba(255, 255, 255, 0.8);
-  --site-layout-background: #ffffff;
-  --card-background-color: #f5f5f5;
-  --footer-background: #f0f2f5;
-  --text-color: #000000;
-  --header-text-color: #000000;
-  --footer-text-color: #555555;
-  --border-color: rgba(0, 0, 0, 0.1);
-}
 
 /* --- Styles pour la modale de projet --- */
 .project-modal-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px; /* Espace entre les boutons, horizontalement et verticalement */
-  margin-top: 24px; /* Espace au-dessus du groupe de boutons */
+  gap: 10px;
+  /* Espace entre les boutons, horizontalement et verticalement */
+  margin-top: 24px;
+  /* Espace au-dessus du groupe de boutons */
 }
