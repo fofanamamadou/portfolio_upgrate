@@ -19,8 +19,26 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
   gap: 20px;
-  /* Ajoute un espace entre le titre et le menu/boutons */
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .app-content {

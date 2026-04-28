@@ -139,40 +139,41 @@ function App() {
 
       <Header className="app-header">
         <div className="header-content">
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <Avatar size={40} src="profil.png" style={{ marginRight: '15px' }} />
+          <div className="header-left">
+            <Avatar size={40} src="profil.png" />
             <h1 className="header-title">Mamadou FOFANA</h1>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <div className="desktop-only" style={{ flex: 1, justifyContent: 'flex-end', minWidth: 0 }}>
+          <div className="header-right">
+            <div className="desktop-only">
               <Menu
                 className="header-menu"
                 mode="horizontal"
                 items={menuItems}
                 selectedKeys={[current]}
-                style={{ borderBottom: 'none', flex: 1, display: 'flex', justifyContent: 'flex-end' }}
               />
             </div>
 
-            <Button
-              type="text"
-              onClick={() => changeLanguage(i18n.language.startsWith('fr') ? 'en' : 'fr')}
-              icon={<GlobalOutlined />}
-              style={{ fontWeight: '500' }}
-            >
-              {i18n.language.startsWith('fr') ? 'FR' : 'EN'}
-            </Button>
+            <div className="header-actions">
+              <Button
+                type="text"
+                onClick={() => changeLanguage(i18n.language.startsWith('fr') ? 'en' : 'fr')}
+                icon={<GlobalOutlined />}
+                style={{ fontWeight: '500' }}
+              >
+                {i18n.language.startsWith('fr') ? 'FR' : 'EN'}
+              </Button>
 
-            <Button
-              type="text"
-              onClick={toggleTheme}
-              icon={isDarkMode ? <SunOutlined /> : <MoonOutlined />}
-            />
+              <Button
+                type="text"
+                onClick={toggleTheme}
+                icon={isDarkMode ? <SunOutlined /> : <MoonOutlined />}
+              />
 
-            <Button className="mobile-only" type="text" onClick={showDrawer}>
-              <MenuOutlined />
-            </Button>
+              <Button className="mobile-only" type="text" onClick={showDrawer}>
+                <MenuOutlined />
+              </Button>
+            </div>
           </div>
         </div>
       </Header>

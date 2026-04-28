@@ -1,0 +1,42 @@
+Rapport d'implémentation du système Multi-langue (FR/EN)
+=========================================================
+
+Ce document explique comment le système d'internationalisation (i18n) a été mis en place sur le portfolio.
+
+1. Technologies utilisées
+-------------------------
+- i18next : Le cœur du système pour la gestion des traductions.
+- react-i18next : L'extension pour intégrer i18next avec React (hooks, composants).
+- i18next-browser-languagedetector : Pour détecter automatiquement la langue du navigateur de l'utilisateur.
+
+2. Structure des fichiers
+-------------------------
+- src/i18n.js : Fichier de configuration central. Il initialise i18next, définit les langues supportées (FR, EN) et configure la persistance.
+- src/locales/fr.json : Contient toutes les chaînes de caractères en français.
+- src/locales/en.json : Contient toutes les chaînes de caractères en anglais (traductions correspondantes).
+- src/main.jsx : Importe la configuration i18n pour qu'elle soit disponible dans toute l'application.
+
+3. Approche d'implémentation
+----------------------------
+
+A. Centralisation des textes :
+Tous les textes en dur ont été extraits des composants (About, Skills, Contact, Projets) et placés dans les fichiers JSON de "locales". Cela facilite la maintenance et l'ajout futur de nouvelles langues.
+
+B. Utilisation du Hook useTranslation :
+Dans chaque composant, nous utilisons le hook `useTranslation()` pour accéder à la fonction `t()`. Cette fonction permet de récupérer la bonne traduction en fonction de la langue active (ex: `t('menu.about')`).
+
+C. Gestion des Projets :
+Les données des projets étant stockées dans un fichier JSON (`projects.json`), nous avons mis en place une logique dans `App.jsx` pour fusionner ces données techniques (images, liens, technos) avec les titres et descriptions traduits provenant de `fr.json` et `en.json`.
+
+D. Sélecteur de Langue :
+Un bouton de basculement (FR / EN) a été ajouté dans le Header. Il utilise la fonction `i18n.changeLanguage()` pour changer dynamiquement la langue sans recharger la page.
+
+E. Persistance et Détection :
+Le système détecte la langue du navigateur lors de la première visite. Si l'utilisateur change manuellement la langue, son choix est sauvegardé dans le stockage local (localStorage) du navigateur pour ses futures visites.
+
+4. Comment ajouter du contenu ?
+-------------------------------
+Pour ajouter ou modifier un texte, il suffit de modifier les fichiers dans `src/locales/`. Assurez-vous de garder les mêmes clés dans `fr.json` et `en.json` pour que le basculement fonctionne correctement.
+
+-------------------------
+Réalisé le 28/04/2026
