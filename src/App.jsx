@@ -152,7 +152,6 @@ function App() {
                 items={menuItems}
                 selectedKeys={[current]}
                 style={{ borderBottom: 'none', flex: 1, display: 'flex', justifyContent: 'flex-end' }}
-                disabledOverflow={true}
               />
             </div>
 
