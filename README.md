@@ -1,118 +1,16 @@
-# Mon Portfolio
+# React + Vite
 
-Bienvenue sur le dépôt de mon portfolio personnel ! Ce site web est conçu pour présenter mes projets, mes compétences et mon parcours professionnel de manière interactive et esthétique.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Fonctionnalités
+Currently, two official plugins are available:
 
-*   **Design Moderne et Épuré :** Interface professionnelle avec une typographie soignée (Inter) et une palette de couleurs harmonieuse.
-*   **Effet "Glassmorphism" :** L'en-tête et les cartes utilisent un effet de verre dépoli pour un look moderne et une meilleure hiérarchie visuelle.
-*   **Thème Sombre/Clair :** Détection automatique du thème système, avec un sélecteur manuel pour forcer le mode clair ou sombre. Le choix est mémorisé pour les visites futures.
-*   **Micro-interactions :** Des effets de survol subtils sur les cartes de projet et les compétences pour une expérience utilisateur plus dynamique.
-*   **Compétences Visuelles :** Une grille de compétences avec des icônes pour une identification rapide et esthétique des technologies maîtrisées.
-*   **Entièrement Responsive :** Le design s'adapte parfaitement à toutes les tailles d'écran.
-*   **Navigation Fluide :** Un menu "sticky" qui surligne la section active lors du défilement (scrollspy).
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Technologies Utilisées
+## React Compiler
 
-*   **Frontend :**
-    *   [React](https://react.dev/) : Bibliothèque JavaScript pour la construction d'interfaces utilisateur.
-    *   [Ant Design](https://ant.design/) : Bibliothèque de composants UI pour une interface élégante et réactive.
-    *   [@ant-design/icons](https://ant.design/components/icon/) : Bibliothèque d'icônes SVG de haute qualité, parfaitement intégrée avec Ant Design.
-    *   [react-tsparticles](https://www.npmjs.com/package/react-tsparticles) : Pour l'arrière-plan animé et interactif.
-*   **Outils de Développement :**
-    *   [Node.js](https://nodejs.org/) & [pnpm](https://pnpm.io/) : Environnement d'exécution JavaScript et gestionnaire de paquets.
-    *   [Create React App](https://create-react-app.dev/) (`react-scripts`) : Configuration rapide de l'environnement de développement React.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Démarrage Rapide
+## Expanding the ESLint configuration
 
-Suivez ces étapes pour lancer le projet en local sur votre machine.
-
-### Prérequis
-
-Assurez-vous d'avoir [Node.js](https://nodejs.org/en/download/) et [pnpm](https://pnpm.io/installation) installés sur votre système.
-
-### Installation
-
-1.  Clonez ce dépôt :
-    ```bash
-    git clone https://github.com/votre_utilisateur/votre_portfolio.git
-    ```
-2.  Naviguez vers le répertoire du projet :
-    ```bash
-    cd votre_portfolio
-    ```
-3.  Installez les dépendances :
-    ```bash
-    pnpm install
-    ```
-
-### Lancement de l'application
-
-Pour démarrer le serveur de développement :
-
-```bash
-pnpm start
-```
-
-L'application sera accessible dans votre navigateur à l'adresse `http://localhost:3000`.
-
-## Configuration du Formulaire de Contact
-
-Pour que le formulaire de contact fonctionne, vous devez le lier à votre compte [EmailJS](https://www.emailjs.com/).
-
-1.  **Configurez votre compte EmailJS** :
-    *   Connectez votre service d'email (ex: Gmail).
-    *   Créez un nouveau modèle d'email. Vous pouvez copier le code qui se trouve dans le fichier `EMAIL_TEMPLATE.html` (à la racine du projet) et le coller dans la section "Content (HTML)" de votre modèle sur le site d'EmailJS.
-    *   Notez votre **Service ID**, **Template ID**, et **Public Key**.
-
-2.  **Créez un fichier `.env`** à la racine du projet.
-
-3.  **Ajoutez vos clés EmailJS** dans ce fichier comme suit :
-
-    ```env
-    REACT_APP_EMAILJS_SERVICE_ID=VOTRE_SERVICE_ID
-    REACT_APP_EMAILJS_TEMPLATE_ID=VOTRE_TEMPLATE_ID
-    REACT_APP_EMAILJS_PUBLIC_KEY=VOTRE_PUBLIC_KEY
-    ```
-
-4.  **Redémarrez votre serveur** (`pnpm start`) après avoir modifié le fichier `.env` pour que les changements soient pris en compte.
-
-
-## Structure du Projet
-
-```
-.
-├── public/                 # Fichiers statiques (index.html, images, etc.)
-├── src/                    # Code source de l'application React
-│   ├── components/         # Composants React réutilisables
-│   │   ├── About.js        # Section "À propos de moi"
-│   │   ├── Contact.js      # Section "Contact"
-│   │   ├── ProjectCard.js  # Carte individuelle de projet
-│   │   ├── ProjectList.js  # Liste des projets
-│   │   ├── ProjectModal.js # Modale de détails de projet
-│   │   └── Skills.js       # Section "Compétences"
-│   ├── data/               # Données statiques (ex: projets.json)
-│   │   └── projects.json
-│   ├── App.js              # Composant principal de l'application
-│   ├── App.css             # Styles globaux de l'application
-│   ├── index.js            # Point d'entrée de l'application
-│   └── index.css           # Styles de base et variables de thème
-├── package.json            # Métadonnées du projet et dépendances
-├── pnpm-lock.yaml          # Verrouillage des versions des dépendances
-├── README.md               # Ce fichier
-└── THEME_GUIDE.md          # Documentation sur la gestion du thème
-```
-
-
-## Licence
-
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails. (Si vous avez un fichier LICENSE, sinon, vous pouvez l'omettre ou choisir une autre licence).
-
-## Contact
-
-Pour toute question ou collaboration, n'hésitez pas à me contacter :
-
-*   **Mamadou FOFANA**
-*   **Email :** madoufof94@gmail.com
-*   **LinkedIn :** https://www.linkedin.com/in/mamadou-fofana-76706429a/
-*   **GitHub :** https://github.com/fofanamamadou
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

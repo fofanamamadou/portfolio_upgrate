@@ -12,9 +12,9 @@ const Contact = () => {
   // Fonction appelée lors de la soumission du formulaire
   const onFinish = (values) => {
     // Les clés sont lues depuis les variables d'environnement (fichier .env)
-    const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-    const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-    const PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+    const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
     // Ces paramètres seront envoyés à votre modèle EmailJS
     const templateParams = {
@@ -39,7 +39,7 @@ const Contact = () => {
     <div style={{ padding: '50px 0' }}>
       {/* Titre de la section "Me Contacter" */}
       <Title level={2} style={{ textAlign: 'center', marginBottom: '50px' }}>Me Contacter</Title>
-      
+
       {/* Utilise la grille d'Ant Design pour organiser le formulaire et les liens */}
       <Row gutter={[32, 32]}>
         {/* Colonne pour le formulaire d'envoi de message */}
@@ -79,7 +79,7 @@ const Contact = () => {
             </Form.Item>
           </Form>
         </Col>
-        
+
         {/* Colonne pour les liens vers les profils sociaux */}
         <Col xs={24} md={12}>
           <Title level={4}>Retrouvez-moi sur</Title>
