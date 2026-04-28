@@ -1,0 +1,59 @@
+{
+    "menu": {
+        "about": "About",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "about": {
+        "title": "About Me",
+        "p1": "Hello! I am <strong>Mamadou FOFANA</strong>, a passionate full-stack developer specializing in creating modern, high-performance, and intuitive web and mobile applications. My goal is to design solutions that combine <em>efficiency</em>, <em>user experience</em>, and <em>scalability</em>.",
+        "p2": "I have worked with several technologies such as <strong>Next.js</strong>, <strong>React.js</strong>, <strong>React Native</strong>, <strong>Django</strong>, <strong>Spring Boot (Java)</strong>, and <strong>PostgreSQL/MySQL</strong>. I design secure REST APIs (JWT authentication) and integrate web/mobile frontends.",
+        "p3": "Curious and rigorous, I love taking on technical challenges, continuous learning, and working in a team to deliver impactful products. I am also interested in <strong>cybersecurity</strong> and knowledge sharing."
+    },
+    "skills": {
+        "title": "My Skills",
+        "categories": {
+            "Frontend": "Frontend",
+            "Backend": "Backend",
+            "Database": "Database",
+            "Outils": "Tools"
+        }
+    },
+    "projects": {
+        "title": "My Projects",
+        "view_project": "View Project",
+        "github_front": "GitHub Front",
+        "github_back": "GitHub Back",
+        "visit_site": "Visit Site",
+        "list": [
+            {
+                "id": 1,
+                "title": "Affiliation System",
+                "description": "A comprehensive affiliation system with distinct interfaces for Admin and Partners. Developed with React and Django, it allows the Admin to manage users and payments, while Partners can track their bonuses, leads generated via their links, and view their performance evolution."
+            },
+            {
+                "id": 2,
+                "title": "CoursClick",
+                "description": "Landing page for CoursClick, a university platform for attendance management and academic processes. Discover interactive video demonstrations of the interface and frontend directly on the page, with secure access to multi-university features."
+            }
+        ]
+    },
+    "contact": {
+        "title": "Contact Me",
+        "form_title": "Send me a message",
+        "social_title": "Find me on",
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "send": "Send",
+        "name_required": "Please enter your name!",
+        "email_required": "Please enter a valid email!",
+        "message_required": "Please enter your message!",
+        "success": "Thank you! Your message has been sent successfully.",
+        "error": "An error occurred. Please try again later."
+    },
+    "footer": {
+        "rights": "©2025 Mamadou FOFANA. All rights reserved."
+    }
+}

@@ -7,8 +7,10 @@ import {
   ProjectOutlined,
   MailOutlined,
   SunOutlined,
-  MoonOutlined
+  MoonOutlined,
+  GlobalOutlined
 } from '@ant-design/icons';
+import { useTranslation } from 'react-i18next';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
 
@@ -24,18 +26,23 @@ import './App.css';
 const { Header, Content, Footer } = Layout;
 const { Title } = Typography;
 
-const menuItems = [
-  { key: 'about', icon: <UserOutlined />, label: <a href="#about">À propos</a> },
-  { key: 'skills', icon: <CodeOutlined />, label: <a href="#skills">Compétences</a> },
-  { key: 'projects', icon: <ProjectOutlined />, label: <a href="#projects">Projets</a> },
-  { key: 'contact', icon: <MailOutlined />, label: <a href="#contact">Contact</a> },
-];
-
 function App() {
+  const { t, i18n } = useTranslation();
   const [init, setInit] = useState(false);
   const [drawerVisible, setDrawerVisible] = useState(false);
   const [current, setCurrent] = useState('about');
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'system');
+
+  const menuItems = [
+    { key: 'about', icon: <UserOutlined />, label: <a href="#about">{t('menu.about')}</a> },
+    { key: 'skills', icon: <CodeOutlined />, label: <a href="#skills">{t('menu.skills')}</a> },
+    { key: 'projects', icon: <ProjectOutlined />, label: <a href="#projects">{t('menu.projects')}</a> },
+    { key: 'contact', icon: <MailOutlined />, label: <a href="#contact">{t('menu.contact')}</a> },
+  ];
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   const isDarkMode = theme === 'system'
     ? window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -120,6 +127,12 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
+  const translatedProjects = projects.map((project, index) => ({
+    ...project,
+    title: t(`projects.list.${index}.title`),
+    description: t(`projects.list.${index}.description`)
+  }));
+
   return (
     <Layout className="layout">
       {init && <Particles id="tsparticles" options={particlesOptions} />}
@@ -127,19 +140,30 @@ function App() {
       <Header className="app-header">
         <div className="header-content">
           <div style={{ display: 'flex', alignItems: 'center' }}>
-            <Avatar size={40} src="https://i.ibb.co/W4JdQgPf/Mypicture.jpg" style={{ marginRight: '15px' }} />
+            <Avatar size={40} src="profil.png" style={{ marginRight: '15px' }} />
             <h1 className="header-title">Mamadou FOFANA</h1>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <div className="desktop-only">
+          <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <div className="desktop-only" style={{ flex: 1, justifyContent: 'flex-end', minWidth: 0 }}>
               <Menu
                 className="header-menu"
                 mode="horizontal"
                 items={menuItems}
                 selectedKeys={[current]}
+                style={{ borderBottom: 'none', flex: 1, display: 'flex', justifyContent: 'flex-end' }}
+                disabledOverflow={true}
               />
             </div>
+
+            <Button
+              type="text"
+              onClick={() => changeLanguage(i18n.language.startsWith('fr') ? 'en' : 'fr')}
+              icon={<GlobalOutlined />}
+              style={{ fontWeight: '500' }}
+            >
+              {i18n.language.startsWith('fr') ? 'FR' : 'EN'}
+            </Button>
 
             <Button
               type="text"
@@ -155,7 +179,7 @@ function App() {
       </Header>
 
       <Drawer
-        title="Menu"
+        title={t('menu.about')}
         placement="right"
         onClose={onCloseDrawer}
         open={drawerVisible}
@@ -181,15 +205,15 @@ function App() {
           <div id="about" style={{ paddingTop: '70px', marginTop: '-70px' }}><About /></div>
           <div id="skills" style={{ paddingTop: '70px', marginTop: '-70px' }}><Skills /></div>
           <div id="projects" style={{ paddingTop: '70px', marginTop: '-70px' }}>
-            <Title level={2} style={{ textAlign: 'center', marginBottom: '50px' }}>Mes Projets</Title>
-            <ProjectList projects={projects} />
+            <Title level={2} style={{ textAlign: 'center', marginBottom: '50px' }}>{t('projects.title')}</Title>
+            <ProjectList projects={translatedProjects} />
           </div>
           <div id="contact" style={{ paddingTop: '70px', marginTop: '-70px' }}><Contact /></div>
         </div>
       </Content>
 
       <Footer style={{ textAlign: 'center', zIndex: 0, background: 'transparent' }}>
-        ©2025 Mamadou FOFANA. Tous droits réservés.
+        {t('footer.rights')}
       </Footer>
     </Layout>
   );

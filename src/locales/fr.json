@@ -1,0 +1,59 @@
+{
+    "menu": {
+        "about": "À propos",
+        "skills": "Compétences",
+        "projects": "Projets",
+        "contact": "Contact"
+    },
+    "about": {
+        "title": "À propos de moi",
+        "p1": "Bonjour ! Je suis <strong>Mamadou FOFANA</strong>, développeur full-stack passionné, spécialisé dans la création d’applications web et mobiles modernes, performantes et intuitives. Mon objectif est de concevoir des solutions qui allient <em>efficacité</em>, <em>expérience utilisateur</em> et <em>scalabilité</em>.",
+        "p2": "J’ai travaillé avec plusieurs technologies comme <strong>Next.js</strong>, <strong>React.js</strong>, <strong>React Native</strong>, <strong>Django</strong>, <strong>Spring Boot (Java)</strong> et <strong>PostgreSQL/MySQL</strong>. Je conçois des APIs REST sécurisées (authentification JWT) et j’intègre les frontends web/mobile.",
+        "p3": "Curieux et rigoureux, j’aime relever des défis techniques, apprendre en continu et travailler en équipe pour livrer des produits impactants. Je m’intéresse également à la <strong>cybersécurité</strong> et au partage de connaissances."
+    },
+    "skills": {
+        "title": "Mes Compétences",
+        "categories": {
+            "Frontend": "Frontend",
+            "Backend": "Backend",
+            "Database": "Base de données",
+            "Outils": "Outils"
+        }
+    },
+    "projects": {
+        "title": "Mes Projets",
+        "view_project": "Voir le projet",
+        "github_front": "GitHub Front",
+        "github_back": "GitHub Back",
+        "visit_site": "Visiter le site",
+        "list": [
+            {
+                "id": 1,
+                "title": "Système d'Affiliation",
+                "description": "Un système complet d'affiliation avec des interfaces distinctes pour l'Admin et les Partenaires. Développé avec React et Django, il permet à l'Admin de gérer les utilisateurs et les paiements, tandis que les Partenaires peuvent suivre leurs primes, les prospects générés via leurs liens, et consulter leur évolution de performances."
+            },
+            {
+                "id": 2,
+                "title": "CoursClick",
+                "description": "Landing page de CoursClick, la plateforme universitaire de gestion de l’assiduité et des processus académiques. Découvrez des démonstrations vidéo interactives de l’interface et du frontend directement sur la page, avec un accès sécurisé aux fonctionnalités multi-universités."
+            }
+        ]
+    },
+    "contact": {
+        "title": "Me Contacter",
+        "form_title": "Envoyez-moi un message",
+        "social_title": "Retrouvez-moi sur",
+        "name": "Nom",
+        "email": "Email",
+        "message": "Message",
+        "send": "Envoyer",
+        "name_required": "Veuillez entrer votre nom !",
+        "email_required": "Veuillez entrer un email valide !",
+        "message_required": "Veuillez entrer votre message !",
+        "success": "Merci ! Votre message a été envoyé avec succès.",
+        "error": "Une erreur s'est produite. Veuillez réessayer plus tard."
+    },
+    "footer": {
+        "rights": "©2025 Mamadou FOFANA. Tous droits réservés."
+    }
+}

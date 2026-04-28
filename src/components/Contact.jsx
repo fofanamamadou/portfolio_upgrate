@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 // J'importe le composant 'message' d'Ant Design pour de plus belles notifications
 import { Typography, Form, Input, Button, Row, Col, Space, message as antdMessage } from 'antd';
 import { LinkedinOutlined, GithubOutlined, MailOutlined } from '@ant-design/icons';
@@ -9,6 +10,8 @@ const { Title } = Typography;
 const { TextArea } = Input;
 
 const Contact = () => {
+  const { t } = useTranslation();
+
   // Fonction appelée lors de la soumission du formulaire
   const onFinish = (values) => {
     // Les clés sont lues depuis les variables d'environnement (fichier .env)
@@ -27,10 +30,10 @@ const Contact = () => {
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
-        antdMessage.success('Merci ! Votre message a été envoyé avec succès.');
+        antdMessage.success(t('contact.success'));
       }, (err) => {
         console.log('FAILED...', err);
-        antdMessage.error("Une erreur s'est produite. Veuillez réessayer plus tard.");
+        antdMessage.error(t('contact.error'));
       });
   };
 
@@ -38,43 +41,43 @@ const Contact = () => {
     // Conteneur principal de la section avec un padding vertical
     <div style={{ padding: '50px 0' }}>
       {/* Titre de la section "Me Contacter" */}
-      <Title level={2} style={{ textAlign: 'center', marginBottom: '50px' }}>Me Contacter</Title>
+      <Title level={2} style={{ textAlign: 'center', marginBottom: '50px' }}>{t('contact.title')}</Title>
 
       {/* Utilise la grille d'Ant Design pour organiser le formulaire et les liens */}
       <Row gutter={[32, 32]}>
         {/* Colonne pour le formulaire d'envoi de message */}
         <Col xs={24} md={12}>
-          <Title level={4}>Envoyez-moi un message</Title>
+          <Title level={4}>{t('contact.form_title')}</Title>
           {/* Formulaire Ant Design avec validation */}
           <Form name="contact" onFinish={onFinish} layout="vertical">
             {/* Champ pour le nom */}
             <Form.Item
               name="name"
-              label="Nom"
-              rules={[{ required: true, message: 'Veuillez entrer votre nom !' }]}
+              label={t('contact.name')}
+              rules={[{ required: true, message: t('contact.name_required') }]}
             >
               <Input />
             </Form.Item>
             {/* Champ pour l'email */}
             <Form.Item
               name="email"
-              label="Email"
-              rules={[{ required: true, type: 'email', message: 'Veuillez entrer un email valide !' }]}
+              label={t('contact.email')}
+              rules={[{ required: true, type: 'email', message: t('contact.email_required') }]}
             >
               <Input />
             </Form.Item>
             {/* Champ pour le message (zone de texte) */}
             <Form.Item
               name="message"
-              label="Message"
-              rules={[{ required: true, message: 'Veuillez entrer votre message !' }]}
+              label={t('contact.message')}
+              rules={[{ required: true, message: t('contact.message_required') }]}
             >
               <TextArea rows={4} />
             </Form.Item>
             {/* Bouton de soumission du formulaire */}
             <Form.Item>
               <Button type="primary" htmlType="submit">
-                Envoyer
+                {t('contact.send')}
               </Button>
             </Form.Item>
           </Form>
@@ -82,7 +85,7 @@ const Contact = () => {
 
         {/* Colonne pour les liens vers les profils sociaux */}
         <Col xs={24} md={12}>
-          <Title level={4}>Retrouvez-moi sur</Title>
+          <Title level={4}>{t('contact.social_title')}</Title>
           {/* Utilise Space pour espacer horizontalement les icônes */}
           <Space size="large">
             {/* Lien LinkedIn avec icône */}

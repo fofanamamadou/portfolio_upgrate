@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, Button, Tag } from 'antd'; // Importe les composants Modal, Button, Tag d'Ant Design
 import { GithubOutlined, LinkOutlined } from '@ant-design/icons'; // Importe les icônes GitHub et Lien
+import { useTranslation } from 'react-i18next';
 
 /**
  * Composant ProjectModal
@@ -8,6 +9,8 @@ import { GithubOutlined, LinkOutlined } from '@ant-design/icons'; // Importe les
  * Inclut une vidéo ou une image, une description, les technologies et des liens.
  */
 const ProjectModal = ({ project, visible, onClose }) => {
+  const { t } = useTranslation();
+
   // Si aucun projet n'est fourni, ne rend rien
   if (!project) return null;
 
@@ -43,32 +46,32 @@ const ProjectModal = ({ project, visible, onClose }) => {
       <div className="project-modal-links">
         {/* Bouton "Code Source" si githubUrl est présent */}
         {project.githubUrl_front && (
-          <Button 
+          <Button
             href={project.githubUrl_front} // Lien vers le dépôt GitHub
             target="_blank" // Ouvre dans un nouvel onglet
             icon={<GithubOutlined />} // Icône GitHub
           >
-            Code Source frontend
+            {t('projects.github_front')}
           </Button>
         )}
         {project.githubUrl_back && (
-          <Button 
+          <Button
             href={project.githubUrl_back} // Lien vers le dépôt GitHub
             target="_blank" // Ouvre dans un nouvel onglet
             icon={<GithubOutlined />} // Icône GitHub
           >
-            Code Source backend
+            {t('projects.github_back')}
           </Button>
         )}
         {/* Bouton "Visiter le Site" si siteUrl est présent */}
         {project.siteUrl && (
-          <Button 
+          <Button
             href={project.siteUrl} // Lien vers le site live
             target="_blank" // Ouvre dans un nouvel onglet
             icon={<LinkOutlined />} // Icône de lien
             type="primary" // Style de bouton primaire d'Ant Design
           >
-            Visiter le Site
+            {t('projects.visit_site')}
           </Button>
         )}
       </div>

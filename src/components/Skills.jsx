@@ -1,5 +1,6 @@
 import React from 'react';
 import { Typography } from 'antd';
+import { useTranslation } from 'react-i18next';
 import {
   FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaNodeJs, FaJava, FaDocker
 } from 'react-icons/fa';
@@ -28,7 +29,7 @@ const skills = {
     { name: "Hibernate", icon: <SiHibernate /> },
     { name: "API REST", icon: <TbApi /> },
     { name: "JWT Auth", icon: <SiJsonwebtokens /> },
-    { name: "Email Services", icon: <IoMail /> }, 
+    { name: "Email Services", icon: <IoMail /> },
     { name: "Multi-tenancy", icon: <MdOutlineAccountTree /> },
   ],
   "Database": [
@@ -45,13 +46,15 @@ const skills = {
 
 
 const Skills = () => {
+  const { t } = useTranslation();
+
   return (
     <div style={{ padding: '50px 0' }}>
-      <Title level={2} style={{ textAlign: 'center', marginBottom: '50px' }}>Mes Compétences</Title>
-      
+      <Title level={2} style={{ textAlign: 'center', marginBottom: '50px' }}>{t('skills.title')}</Title>
+
       {Object.entries(skills).map(([category, list]) => (
         <div key={category} style={{ marginBottom: '40px' }}>
-          <Title level={4} style={{ marginBottom: '20px' }}>{category}</Title>
+          <Title level={4} style={{ marginBottom: '20px' }}>{t(`skills.categories.${category}`)}</Title>
           <div className="skills-grid">
             {list.map(skill => (
               <div className="skill-card" key={skill.name}>
