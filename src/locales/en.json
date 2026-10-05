@@ -7,9 +7,9 @@
     },
     "about": {
         "title": "About Me",
-        "p1": "Hello! I am <strong>Mamadou FOFANA</strong>, a passionate full-stack developer specializing in creating modern, high-performance, and intuitive web and mobile applications. My goal is to design solutions that combine <em>efficiency</em>, <em>user experience</em>, and <em>scalability</em>.",
-        "p2": "I have worked with several technologies such as <strong>Next.js</strong>, <strong>React.js</strong>, <strong>React Native</strong>, <strong>Django</strong>, <strong>Spring Boot (Java)</strong>, and <strong>PostgreSQL/MySQL</strong>. I design secure REST APIs (JWT authentication) and integrate web/mobile frontends.",
-        "p3": "Curious and rigorous, I love taking on technical challenges, continuous learning, and working in a team to deliver impactful products. I am also interested in <strong>cybersecurity</strong> and knowledge sharing."
+        "p1": "Hello! I am <strong>Mamadou FOFANA</strong>, a passionate full-stack developer creating modern, high-performance, and intuitive web and mobile applications. My goal is to design and deploy solutions that combine <em>efficiency</em>, <em>user experience</em>, <em>scalability</em>, and <em>high availability</em>.",
+        "p2": "Equipped with diverse skills, I work with <strong>Next.js</strong>, <strong>React.js</strong>, <strong>React Native</strong>, <strong>Django</strong>, <strong>Spring Boot</strong>, and databases like <strong>PostgreSQL/MySQL</strong>. I design secure REST APIs (JWT auth) and manage deployments on <strong>Cloud & VPS</strong> servers.",
+        "p3": "Certified <strong>AWS Certified Cloud Practitioner</strong>, I master AWS cloud fundamentals and VPS hosting. Rigorous and continuous learner, I am also passionate about <strong>Data Science</strong>."
     },
     "skills": {
         "title": "My Skills",
@@ -17,12 +17,14 @@
             "Frontend": "Frontend",
             "Backend": "Backend",
             "Database": "Database",
+            "Cloud & DevOps": "Cloud & DevOps",
             "Outils": "Tools"
         }
     },
     "projects": {
         "title": "My Projects",
         "view_project": "View Project",
+        "view_repo": "View Repository",
         "github_front": "GitHub Front",
         "github_back": "GitHub Back",
         "visit_site": "Visit Site",
@@ -30,12 +32,17 @@
             {
                 "id": 1,
                 "title": "Affiliation System",
-                "description": "A comprehensive affiliation system with distinct interfaces for Admin and Partners. Developed with React and Django, it allows the Admin to manage users and payments, while Partners can track their bonuses, leads generated via their links, and view their performance evolution."
+                "description": "Affiliate platform enabling partners to track bonuses and leads, and admins to manage users and payments."
             },
             {
                 "id": 2,
                 "title": "CoursClick",
-                "description": "Landing page for CoursClick, a university platform for attendance management and academic processes. Discover interactive video demonstrations of the interface and frontend directly on the page, with secure access to multi-university features."
+                "description": "University platform for managing attendance and multi-campus academic processes."
+            },
+            {
+                "id": 3,
+                "title": "Orenfo",
+                "description": "Web platform connecting learners with qualified trainers."
             }
         ]
     },
@@ -54,6 +61,6 @@
         "error": "An error occurred. Please try again later."
     },
     "footer": {
-        "rights": "©2025 Mamadou FOFANA. All rights reserved."
+        "rights": "© 2025 - {{year}} Mamadou FOFANA. All rights reserved."
     }
 }

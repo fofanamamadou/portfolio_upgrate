@@ -33,11 +33,11 @@ function App() {
   const [current, setCurrent] = useState('about');
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'system');
 
-  const menuItems = [
-    { key: 'about', icon: <UserOutlined />, label: <a href="#about">{t('menu.about')}</a> },
-    { key: 'skills', icon: <CodeOutlined />, label: <a href="#skills">{t('menu.skills')}</a> },
-    { key: 'projects', icon: <ProjectOutlined />, label: <a href="#projects">{t('menu.projects')}</a> },
-    { key: 'contact', icon: <MailOutlined />, label: <a href="#contact">{t('menu.contact')}</a> },
+  const navItems = [
+    { key: 'about', href: '#about', icon: <UserOutlined />, label: t('menu.about') },
+    { key: 'skills', href: '#skills', icon: <CodeOutlined />, label: t('menu.skills') },
+    { key: 'projects', href: '#projects', icon: <ProjectOutlined />, label: t('menu.projects') },
+    { key: 'contact', href: '#contact', icon: <MailOutlined />, label: t('menu.contact') },
   ];
 
   const changeLanguage = (lng) => {
@@ -97,13 +97,19 @@ function App() {
     detectRetina: true,
   };
 
+  const drawerMenuItems = navItems.map(item => ({
+    key: item.key,
+    icon: item.icon,
+    label: <a href={item.href}>{item.label}</a>
+  }));
+
   const showDrawer = () => setDrawerVisible(true);
   const onCloseDrawer = () => setDrawerVisible(false);
 
   const handleScroll = useCallback(() => {
     const headerOffset = 150;
     const scrollPosition = window.scrollY + headerOffset;
-    const sectionIds = menuItems.map(item => item.key).reverse();
+    const sectionIds = navItems.map(item => item.key).reverse();
 
     let newCurrent = 'about';
     for (const id of sectionIds) {
@@ -140,20 +146,26 @@ function App() {
       <Header className="app-header">
         <div className="header-content">
           <div className="header-left">
-            <Avatar size={40} src="profil.png" />
+            <Avatar size={40} src="/images/profil.webp" alt="Mamadou FOFANA" />
             <h1 className="header-title">Mamadou FOFANA</h1>
           </div>
 
-          <div className="header-right">
-            <div className="desktop-only">
-              <Menu
-                className="header-menu"
-                mode="horizontal"
-                items={menuItems}
-                selectedKeys={[current]}
-              />
-            </div>
+          <div className="header-center desktop-only">
+            <nav className="custom-header-nav">
+              {navItems.map(item => (
+                <a
+                  key={item.key}
+                  href={item.href}
+                  className={`custom-nav-item ${current === item.key ? 'active' : ''}`}
+                >
+                  <span className="custom-nav-icon">{item.icon}</span>
+                  <span className="custom-nav-label">{item.label}</span>
+                </a>
+              ))}
+            </nav>
+          </div>
 
+          <div className="header-right">
             <div className="header-actions">
               <Button
                 type="text"
@@ -193,7 +205,7 @@ function App() {
         <Menu
           theme={isDarkMode ? 'dark' : 'light'}
           mode="vertical"
-          items={menuItems}
+          items={drawerMenuItems}
           selectedKeys={[current]}
           onClick={onCloseDrawer}
           style={{ background: 'transparent', borderRight: 'none' }}
@@ -213,7 +225,7 @@ function App() {
       </Content>
 
       <Footer style={{ textAlign: 'center', zIndex: 0, background: 'transparent' }}>
-        {t('footer.rights')}
+        {t('footer.rights', { year: new Date().getFullYear() })}
       </Footer>
     </Layout>
   );

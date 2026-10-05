@@ -2,20 +2,53 @@
   {
     "id": 1,
     "title": "Système d'Affiliation",
-    "description": "Un système complet d'affiliation avec des interfaces distinctes pour l'Admin et les Partenaires. Développé avec React et Django, il permet à l'Admin de gérer les utilisateurs et les paiements, tandis que les Partenaires peuvent suivre leurs primes, les prospects générés via leurs liens, et consulter leur évolution de performances.",
-    "imageUrl": "https://i.ibb.co/qYPSc24p/Screenshot-2025-09-01-114309.png",
-    "technologies": ["React", "Django", "PostgreSQL", "JWT", "Ant Design", "Recharts"],
-    "githubUrl_front": "https://github.com/fofanamamadou/affiliation_project_front",
-    "githubUrl_back": "https://github.com/fofanamamadou/affiliation_project_backend",
-    "siteUrl": "https://affiliation.ispatec.net/",
-    "videoHtml": "<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1116365007?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Presentation Plateforme d\\'affiliation\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>"  },
-    {
-      "id": 2,
-      "title": "CoursClick",
-      "description": "Landing page de CoursClick, la plateforme universitaire de gestion de l’assiduité et des processus académiques. Découvrez des démonstrations vidéo interactives de l’interface et du frontend directement sur la page, avec un accès sécurisé aux fonctionnalités multi-universités.",
-      "imageUrl": "https://i.ibb.co/Q3wPwpSD/Screenshot-2026-01-22-132128.png",
-      "technologies": ["Next.js", "Springboot", "MySQL", "JWT", "Ant Design", "Recharts", "Multi-tenacy"],
-      "siteUrl": "https://coursclick.netlify.app/",
-      "videoHtml": "<div style=\"padding:56.25% 0 0 0;position:relative;\"><iframe src=\"https://player.vimeo.com/video/1162708984?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" style=\"position:absolute;top:0;left:0;width:100%;height:100%;\" title=\"Presentation Plateforme CoursClick\"></iframe></div><script src=\"https://player.vimeo.com/api/player.js\"></script>" 
-    }
-]  
+    "year": "2025",
+    "category": "Système",
+    "description": "Plateforme d'affiliation permettant aux partenaires de suivre leurs primes et prospects, et à l'admin de gérer les paiements.",
+    "imageUrl": "/images/affiliation.webp",
+    "technologies": [
+      "React",
+      "Django",
+      "PostgreSQL",
+      "JWT",
+      "Ant Design",
+      "Recharts"
+    ],
+    "siteUrl": "https://affiliation.ispatec.net/"
+  },
+  {
+    "id": 2,
+    "title": "CoursClick",
+    "year": "2026",
+    "category": "Plateforme",
+    "description": "Plateforme universitaire de gestion de l’assiduité et des processus académiques multi-établissements.",
+    "imageUrl": "/images/coursclick.webp",
+    "technologies": [
+      "Next.js",
+      "Springboot",
+      "MySQL",
+      "JWT",
+      "Ant Design",
+      "Recharts",
+      "Multi-tenancy"
+    ],
+    "siteUrl": "https://coursclick.netlify.app/"
+  },
+  {
+    "id": 3,
+    "title": "Orenfo",
+    "year": "2026",
+    "category": "Web App",
+    "description": "Plateforme web de mise en relation entre apprenants et formateurs qualifiés.",
+    "imageUrl": "/images/orenfo.webp",
+    "technologies": [
+      "Next.js",
+      "Spring Boot",
+      "Cloud VPS",
+      "APIs Paiement",
+      "MySQL",
+      "Ant Design"
+    ],
+    "siteUrl": "https://orenfo.com"
+  }
+]

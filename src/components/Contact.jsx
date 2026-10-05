@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 // J'importe le composant 'message' d'Ant Design pour de plus belles notifications
 import { Typography, Form, Input, Button, Row, Col, Space, message as antdMessage } from 'antd';
-import { LinkedinOutlined, GithubOutlined, MailOutlined } from '@ant-design/icons';
+import { LinkedinOutlined, GithubOutlined, MailOutlined, TikTokOutlined } from '@ant-design/icons';
 import emailjs from 'emailjs-com'; // Importation de la bibliothèque EmailJS
 
 // Destructure les composants de Typography et Input
@@ -11,9 +11,12 @@ const { TextArea } = Input;
 
 const Contact = () => {
   const { t } = useTranslation();
+  const [form] = Form.useForm();
+  const [loading, setLoading] = useState(false);
 
   // Fonction appelée lors de la soumission du formulaire
   const onFinish = (values) => {
+    setLoading(true);
     // Les clés sont lues depuis les variables d'environnement (fichier .env)
     const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -31,9 +34,14 @@ const Contact = () => {
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         antdMessage.success(t('contact.success'));
-      }, (err) => {
+        form.resetFields(); // Réinitialise le formulaire après envoi réussi
+      })
+      .catch((err) => {
         console.log('FAILED...', err);
         antdMessage.error(t('contact.error'));
+      })
+      .finally(() => {
+        setLoading(false); // Réactive le bouton et retire le spinner
       });
   };
 
@@ -49,7 +57,7 @@ const Contact = () => {
         <Col xs={24} md={12}>
           <Title level={4}>{t('contact.form_title')}</Title>
           {/* Formulaire Ant Design avec validation */}
-          <Form name="contact" onFinish={onFinish} layout="vertical">
+          <Form form={form} name="contact" onFinish={onFinish} layout="vertical">
             {/* Champ pour le nom */}
             <Form.Item
               name="name"
@@ -76,7 +84,7 @@ const Contact = () => {
             </Form.Item>
             {/* Bouton de soumission du formulaire */}
             <Form.Item>
-              <Button type="primary" htmlType="submit">
+              <Button type="primary" htmlType="submit" loading={loading}>
                 {t('contact.send')}
               </Button>
             </Form.Item>
@@ -89,8 +97,12 @@ const Contact = () => {
           {/* Utilise Space pour espacer horizontalement les icônes */}
           <Space size="large">
             {/* Lien LinkedIn avec icône */}
-            <a href="https://www.linkedin.com/in/mamadou-fofana-76706429a/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/mamadou-fofana1/" target="_blank" rel="noopener noreferrer">
               <LinkedinOutlined style={{ fontSize: '40px', color: 'var(--text-color)' }} />
+            </a>
+            {/* Lien LinkedIn avec icône */}
+            <a href="https://www.tiktok.com/@fofanadev" target="_blank" rel="noopener noreferrer">
+              <TikTokOutlined style={{ fontSize: '40px', color: 'var(--text-color)' }} />
             </a>
             {/* Lien GitHub avec icône */}
             <a href="https://github.com/fofanamamadou" target="_blank" rel="noopener noreferrer">

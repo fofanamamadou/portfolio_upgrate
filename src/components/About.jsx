@@ -14,7 +14,7 @@ const About = () => {
     <div style={{ padding: '50px 0' }}>
       <Row align="middle" gutter={[32, 32]}>
         <Col xs={24} sm={8} style={{ textAlign: 'center' }}>
-          <Avatar size={150} src="profil.png" />
+          <Avatar size={150} src="/images/profil.webp" alt="Mamadou FOFANA" />
         </Col>
 
         <Col xs={24} sm={16}>

@@ -25,6 +25,15 @@
   display: flex;
   align-items: center;
   gap: 15px;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.header-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 2;
 }
 
 .header-right {
@@ -84,35 +93,104 @@
   /* Empêche le retour à la ligne */
 }
 
-.header-menu.ant-menu {
-  background: transparent;
-  border-bottom: none;
-  line-height: 62px;
-  /* Ajustement pour l'alignement vertical */
+/* --- Custom Header Navigation (Icons in header, clean text label strictly BELOW header bottom border) --- */
+.app-header {
+  height: 64px !important;
+  line-height: 64px !important;
+  overflow: visible !important;
 }
 
-.header-menu .ant-menu-item a {
+.header-content,
+.header-right,
+.header-center,
+.desktop-only {
+  overflow: visible !important;
+}
+
+.custom-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  height: 64px;
+  overflow: visible !important;
+}
+
+.custom-nav-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  height: 64px;
+  padding: 0 4px;
+  background: transparent !important;
+  transition: all 0.25s ease;
+  overflow: visible !important;
+}
+
+.custom-nav-icon {
+  font-size: 1.35rem;
   color: var(--text-color);
-  font-weight: 500;
-  transition: color 0.3s;
+  background: transparent !important;
+  border: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.25s ease;
 }
 
-.header-menu .ant-menu-item-selected a,
-.header-menu .ant-menu-item a:hover {
-  color: var(--primary-color) !important;
+/* Texte épuré placé STRICTEMENT EN DESSOUS de la bordure du header (top: 100%), aucun chevauchement possible */
+.custom-nav-label {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(0px);
+  margin-top: 6px;
+  line-height: 1.2 !important;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  letter-spacing: 0.3px;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 100;
 }
 
-.header-menu .ant-menu-item::after {
-  border-bottom: 2px solid transparent !important;
-  /* Trait transparent par défaut */
-  transition: border-color 0.3s ease-in-out;
-  /* Transition douce */
+/* Ligne de bordure inférieure du header activée sur l'élément */
+.custom-nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2.5px;
+  background-color: var(--primary-color);
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
-/* Applique le trait uniquement à l'élément sélectionné ou survolé */
-.header-menu .ant-menu-item-selected::after,
-.header-menu .ant-menu-item:hover::after {
-  border-bottom-color: var(--primary-color) !important;
+/* Survol & État Actif : L'icône devient bleue, la bordure bleue apparaît, le texte s'affiche EN DESSOUS du header */
+.custom-nav-item:hover .custom-nav-icon,
+.custom-nav-item.active .custom-nav-icon {
+  color: var(--primary-color);
+}
+
+.custom-nav-item:hover .custom-nav-label {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(2px);
+}
+
+.custom-nav-item:hover::after,
+.custom-nav-item.active::after {
+  opacity: 1;
 }
 
 /* Corrige la couleur des icônes dans les boutons de l'en-tête */
@@ -319,12 +397,225 @@ h4.ant-typography {
 }
 
 
-/* --- Styles pour la modale de projet --- */
-.project-modal-links {
+/* --- Styles pour la mise en page épurée (Inspirée du design FlowSync / SOP Opera) --- */
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  width: 100%;
+}
+
+.project-row-item {
+  display: flex;
+  align-items: flex-start; /* Alignement en haut */
+  gap: 48px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: 100%;
+}
+
+.row-normal {
+  flex-direction: row;
+}
+
+.row-reversed {
+  flex-direction: row-reverse;
+}
+
+/* Colonne Image - Cadre indépendant harmonisé */
+.project-row-image-wrapper {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+}
+
+.project-row-image-frame {
+  width: 100%;
+  height: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--card-background-color);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-row-item:hover .project-row-image-frame {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 82, 204, 0.18);
+  border-color: var(--primary-color);
+}
+
+.project-row-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-row-item:hover .project-row-image {
+  transform: scale(1.03);
+}
+
+/* Colonne Contenu - Directement sur le fond */
+.project-row-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 0;
+  padding-top: 4px; /* Alignement optique avec le cadre d'image */
+}
+
+/* Ligne de métadonnées (Année de début · Catégorie) */
+.project-meta-line {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.project-row-title {
+  margin: 0 0 12px 0 !important;
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  color: var(--text-color) !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.5px;
+}
+
+.project-row-description {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text-color);
+  opacity: 0.85;
+  margin-bottom: 24px !important;
+}
+
+.project-row-techs {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  /* Espace entre les boutons, horizontalement et verticalement */
-  margin-top: 24px;
-  /* Espace au-dessus du groupe de boutons */
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.project-tech-pill {
+  font-size: 0.82rem;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-weight: 500;
+  border: 1px solid var(--border-color);
+  background: var(--card-background-color);
+  color: var(--text-color);
+}
+
+/* Bouton Pillule "Visiter le site ↗" harmonisé */
+.project-action-wrapper {
+  margin-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.project-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 50px;
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 82, 204, 0.25);
+  transition: all 0.25s ease;
+}
+
+.project-pill-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 82, 204, 0.4);
+  background: var(--primary-color);
+  color: #ffffff !important;
+}
+
+.project-pill-btn-outline {
+  background: transparent;
+  color: var(--text-color) !important;
+  border-color: var(--border-color);
+  box-shadow: none;
+}
+
+.project-pill-btn-outline:hover {
+  background: var(--card-background-color);
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 14px rgba(0, 82, 204, 0.15);
+}
+
+.pill-btn-icon {
+  font-size: 1.1rem;
+  transition: transform 0.25s ease;
+}
+
+.project-pill-btn:hover .pill-btn-icon {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 768px) {
+  .row-normal,
+  .row-reversed {
+    flex-direction: column !important;
+  }
+
+  .projects-container {
+    gap: 48px;
+  }
+
+  .project-row-item {
+    gap: 24px;
+  }
+
+  .project-row-image-frame {
+    height: 200px;
+  }
+
+  .project-row-title {
+    font-size: 1.6rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .row-normal,
+  .row-reversed {
+    flex-direction: column !important;
+  }
+
+  .project-row-item {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .project-row-image-container {
+    height: 190px;
+  }
+
+  .project-row-title {
+    font-size: 1.2rem !important;
+  }
+
+  .project-arrow-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
 }
