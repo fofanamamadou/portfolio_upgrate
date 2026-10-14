@@ -1,4 +1,4 @@
-/* --- Layout & Structure --- */
+﻿/* --- Layout & Structure --- */
 
 .app-header {
   padding: 0 24px;
@@ -619,3 +619,111 @@ h4.ant-typography {
     font-size: 1.1rem;
   }
 }
+/* ===================== HERO / À PROPOS ===================== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 20px;
+  padding: 40px 24px 60px;
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.word-grid {
+  --mx: -999px; --my: -999px;
+  position: absolute; inset: 0;
+  display: flex; flex-wrap: wrap; gap: 6px 14px;
+  padding: 12px; align-content: flex-start;
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 13px; line-height: 1.5;
+  color: var(--text-color);
+  user-select: none;
+}
+/* Couche de base très discrète */
+.word-grid span { opacity: 0.08; transition: opacity .6s ease, color .6s ease; }
+/* Mot directement survolé : pleinement visible */
+.word-grid span:hover { opacity: 0.9; color: var(--primary-color); transition: opacity 0s; }
+/* Halo lumineux autour du curseur */
+.word-grid::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(220px circle at var(--mx) var(--my), color-mix(in srgb, var(--primary-color) 18%, transparent), transparent 70%);
+}
+.hero-content {
+  position: relative; z-index: 1;
+  max-width: 720px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 18px;
+}
+.hero-avatar { border: 3px solid var(--primary-color); box-shadow: 0 0 40px color-mix(in srgb, var(--primary-color) 40%, transparent); }
+.hero-badge {
+  font-family: 'JetBrains Mono', Consolas, monospace;
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+  padding: 6px 14px; border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--card-background-color);
+}
+.hero-title {
+  margin: 0; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.1; font-weight: 700;
+  color: var(--text-color); letter-spacing: -0.02em;
+}
+.hero-text { margin: 0; font-size: 1.15rem; max-width: 580px; color: var(--text-color) !important; opacity: .85; }
+.hero-text strong { color: var(--primary-color); }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+
+/* ===================== COMPÉTENCES (MARQUEE) ===================== */
+.section-subtitle { text-align: center; opacity: .7; margin: 0 auto 40px; max-width: 560px; }
+.marquee-wrapper { display: flex; flex-direction: column; gap: 18px; }
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+.marquee-track {
+  display: flex; gap: 18px; width: max-content;
+  animation: marquee-left 45s linear infinite;
+}
+.marquee-reverse { animation-name: marquee-right; }
+/* Pause au survol de la rangée */
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee-left  { from { transform: translateX(0); }    to { transform: translateX(calc(-50% - 9px)); } }
+@keyframes marquee-right { from { transform: translateX(calc(-50% - 9px)); } to { transform: translateX(0); } }
+.marquee-card {
+  display: flex; align-items: center; gap: 14px;
+  min-width: 220px; padding: 18px 22px; border-radius: 14px;
+  background: var(--card-background-color);
+  border: 1px solid var(--border-color);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.marquee-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--primary-color) 20%, transparent);
+}
+.marquee-icon { font-size: 2rem; color: var(--primary-color); display: flex; }
+.marquee-text { display: flex; flex-direction: column; }
+.marquee-name { font-weight: 600; white-space: nowrap; }
+.marquee-cat { font-size: 12px; opacity: .6; }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+@media (max-width: 768px) {
+  .hero { padding: 60px 16px; min-height: 460px; }
+  .marquee-card { min-width: 180px; padding: 14px 16px; }
+}
+
+/* Les mots s'effacent au centre : le texte du hero reste toujours lisible */
+.word-grid {
+  -webkit-mask-image: radial-gradient(ellipse 45% 55% at 50% 50%, transparent 40%, #000 85%);
+          mask-image: radial-gradient(ellipse 45% 55% at 50% 50%, transparent 40%, #000 85%);
+}
+
+/* ===================== APPARITION AU SCROLL ===================== */
+.reveal { opacity: 0; transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); will-change: opacity, transform; }
+.reveal-up    { transform: translateY(40px); }
+.reveal-left  { transform: translateX(-60px); }
+.reveal-right { transform: translateX(60px); }
+.reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+.hero-badge { color: var(--primary-color) !important; border-color: color-mix(in srgb, var(--primary-color) 40%, transparent) !important; }
+
+/* Honeypot anti-bot : retiré visuellement et de l'arbre d'accessibilité */
+.hp-field { position: absolute !important; left: -10000px !important; width: 1px; height: 1px; overflow: hidden; }

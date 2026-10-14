@@ -6,13 +6,15 @@
         "contact": "Contact"
     },
     "about": {
-        "title": "À propos de moi",
-        "p1": "Bonjour ! Je suis <strong>Mamadou FOFANA</strong>, développeur full-stack passionné par la création d’applications web et mobiles modernes, performantes et intuitives. Mon objectif est de concevoir et déployer des solutions qui allient <em>efficacité</em>, <em>expérience utilisateur</em>, <em>scalabilité</em> et <em>haute disponibilité</em>.",
-        "p2": "Fort de compétences variées, j'utilise <strong>Next.js</strong>, <strong>React.js</strong>, <strong>React Native</strong>, <strong>Django</strong>, <strong>Spring Boot</strong>, ainsi que des bases de données comme <strong>PostgreSQL/MySQL</strong>. Je conçois des APIs REST sécurisées (authentification JWT) et j'assure le déploiement applicatif sur des serveurs <strong>Cloud & VPS</strong>.",
-        "p3": "Certifié <strong>AWS Certified Cloud Practitioner</strong>, je maîtrise les fondamentaux du cloud AWS et l'hébergement VPS. Curieux et rigoureux, j’aime relever des défis techniques et je m’intéresse également à la <strong>Data Science</strong>."
+        "badge": "Développeur Full-Stack · Certifié AWS",
+        "title": "Je transforme vos idées en applications web & mobiles fiables.",
+        "summary": "Je suis <strong>Mamadou FOFANA</strong> : je conçois, développe et déploie vos plateformes de A à Z, du design à la mise en ligne sur le cloud.",
+        "cta_contact": "Démarrer un projet",
+        "cta_projects": "Voir mes réalisations"
     },
     "skills": {
         "title": "Mes Compétences",
+        "subtitle": "Les technologies que j'utilise au quotidien pour livrer vos projets.",
         "categories": {
             "Frontend": "Frontend",
             "Backend": "Backend",

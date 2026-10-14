@@ -22,6 +22,7 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import projects from './data/projects.json';
 import './App.css';
+import Reveal from './components/Reveal';
 
 const { Header, Content, Footer } = Layout;
 const { Title } = Typography;
@@ -217,10 +218,10 @@ function App() {
           <div id="about" style={{ paddingTop: '70px', marginTop: '-70px' }}><About /></div>
           <div id="skills" style={{ paddingTop: '70px', marginTop: '-70px' }}><Skills /></div>
           <div id="projects" style={{ paddingTop: '70px', marginTop: '-70px' }}>
-            <Title level={2} style={{ textAlign: 'center', marginBottom: '50px' }}>{t('projects.title')}</Title>
+            <Reveal><Title level={2} style={{ textAlign: 'center', marginBottom: '50px' }}>{t('projects.title')}</Title></Reveal>
             <ProjectList projects={translatedProjects} />
           </div>
-          <div id="contact" style={{ paddingTop: '70px', marginTop: '-70px' }}><Contact /></div>
+          <div id="contact" style={{ paddingTop: '70px', marginTop: '-70px' }}><Reveal><Contact /></Reveal></div>
         </div>
       </Content>
 

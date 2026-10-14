@@ -23,3 +23,20 @@ dist-ssr
 *.sln
 *.sw?
 .env
+# ---- Secrets & environnement ----
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+id_rsa*
+secrets.*
+credentials*.json
+service-account*.json
+
+# ---- Netlify / outils ----
+.netlify
+coverage
+.eslintcache
